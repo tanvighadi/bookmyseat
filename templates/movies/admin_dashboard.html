@@ -1,0 +1,187 @@
+{% extends "users/basic.html" %}
+{% block content %}
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+
+<style>
+  body {
+    font-family: 'Montserrat', sans-serif;
+  }
+  .premium-card {
+    background: linear-gradient(135deg, #fdfdfd, #f7f9fc);
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  }
+  .premium-header {
+    background: linear-gradient(90deg,#e3f2fd,#ffffff);
+    color: #2c3e50;
+    font-weight: 600;
+  }
+  .table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f9f9f9;
+  }
+  .table-hover tbody tr:hover {
+    background-color: #eaf2f8;
+    transform: scale(1.01);
+    transition: 0.2s ease-in-out;
+  }
+</style>
+
+<div class="container py-5">
+  <h2 class="mb-4 text-center fw-bold" style="color:#2c3e50; letter-spacing:1px;">
+     Admin Dashboard
+  </h2>
+
+  <!-- Total Revenue -->
+  <div class="card premium-card mb-5">
+    <div class="card-body text-center">
+      <h4 class="fw-bold text-dark"><i class="bi bi-currency-rupee"></i> Total Revenue</h4>
+      <p id="revenueCounter" class="display-3 fw-bold" style="color:#27ae60;">₹{{ total_revenue|floatformat:2 }}</p>
+      <small class="text-muted">All-time Ticket Sales</small>
+    </div>
+  </div>
+
+  <!-- Charts Section -->
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card premium-card mb-4">
+        <div class="card-header premium-header">
+          🎬 Most Popular Movies
+        </div>
+        <div class="card-body">
+          <canvas id="moviesChart" height="220"></canvas>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card premium-card mb-4">
+        <div class="card-header premium-header">
+          🎭 Busiest Theaters
+        </div>
+        <div class="card-body">
+          <canvas id="theatersChart" height="220"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Popular Movies Table -->
+  <div class="card premium-card mb-4">
+    <div class="card-header premium-header">🎬 Detailed Popular Movies</div>
+    <div class="card-body">
+      <table class="table table-hover table-striped table-bordered align-middle">
+        <thead style="background:#2c3e50; color:#fff;">
+          <tr><th>Movie</th><th>Bookings</th></tr>
+        </thead>
+        <tbody>
+          {% for movie in popular_movies %}
+          <tr><td>{{ movie.name }}</td><td>{{ movie.bookings_count }}</td></tr>
+          {% empty %}
+          <tr><td colspan="2" class="text-center">No bookings yet.</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Busiest Theaters Table -->
+  <div class="card premium-card mb-4">
+    <div class="card-header premium-header">🎭 Detailed Busiest Theaters</div>
+    <div class="card-body">
+      <table class="table table-hover table-striped table-bordered align-middle">
+        <thead style="background:#2c3e50; color:#fff;">
+          <tr><th>Theater</th><th>Bookings</th></tr>
+        </thead>
+        <tbody>
+          {% for theater in busy_theaters %}
+          <tr><td>{{ theater.name }}</td><td>{{ theater.bookings_count }}</td></tr>
+          {% empty %}
+          <tr><td colspan="2" class="text-center">No bookings yet.</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- JSON data safely injected -->
+<script id="movie-labels" type="application/json">{{ movie_labels|safe }}</script>
+<script id="movie-data" type="application/json">{{ movie_data|safe }}</script>
+<script id="theater-labels" type="application/json">{{ theater_labels|safe }}</script>
+<script id="theater-data" type="application/json">{{ theater_data|safe }}</script>
+
+<script>
+  const movieLabels = JSON.parse(document.getElementById('movie-labels').textContent);
+  const movieData = JSON.parse(document.getElementById('movie-data').textContent);
+  const theaterLabels = JSON.parse(document.getElementById('theater-labels').textContent);
+  const theaterData = JSON.parse(document.getElementById('theater-data').textContent);
+
+  const premiumColors = ['#FF6384','#36A2EB','#FFCE56','#4BC0C0','#9966FF','#F77825','#8E44AD'];
+
+  // Gradient helper
+  function createGradient(ctx, color1, color2) {
+    const gradient = ctx.createLinearGradient(0,0,0,200);
+    gradient.addColorStop(0, color1);
+    gradient.addColorStop(1, color2);
+    return gradient;
+  }
+
+  // Popular Movies Chart
+  const moviesCtx = document.getElementById('moviesChart').getContext('2d');
+  new Chart(moviesCtx, {
+    type: 'bar',
+    data: {
+      labels: movieLabels,
+      datasets: [{
+        label: 'Bookings',
+        data: movieData,
+        backgroundColor: movieLabels.map((_, i) => createGradient(moviesCtx, premiumColors[i%premiumColors.length], '#ffffff')),
+        borderColor: premiumColors.slice(0, movieLabels.length),
+        borderWidth: 2,
+        borderRadius: 10
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: { legend: { display: false } },
+      scales: {
+        y: {
+          beginAtZero: true,
+          ticks: { stepSize: 1 }
+        }
+      }
+    }
+  });
+
+  // Busiest Theaters Chart
+  new Chart(document.getElementById('theatersChart'), {
+    type: 'pie',
+    data: {
+      labels: theaterLabels,
+      datasets: [{
+        data: theaterData,
+        backgroundColor: premiumColors.slice(0, theaterLabels.length),
+        borderWidth: 2
+      }]
+    },
+    options: { responsive: true, plugins: { legend: { position: 'bottom' } } }
+  });
+
+  // Revenue Counter Animation
+  const revenueElement = document.getElementById('revenueCounter');
+  const targetRevenue = parseFloat(revenueElement.textContent.replace(/[₹,]/g, ''));
+  let current = 0;
+  const step = targetRevenue / 50;
+  const interval = setInterval(() => {
+    current += step;
+    if (current >= targetRevenue) {
+      current = targetRevenue;
+      clearInterval(interval);
+    }
+    revenueElement.textContent = "₹" + current.toFixed(2);
+  }, 40);
+</script>
+{% endblock %}

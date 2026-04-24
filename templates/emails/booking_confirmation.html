@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Booking Confirmation</title>
+  <style>
+    body {
+      font-family: 'Montserrat', Arial, sans-serif;
+      background-color: #f4f6f9;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    .container {
+      max-width: 640px;
+      margin: 40px auto;
+      background: #ffffff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    .header {
+      background: #1e3a8a;
+      color: #ffffff;
+      padding: 25px;
+      text-align: center;
+    }
+    .header h2 {
+      margin: 0;
+      font-size: 22px;
+      font-weight: 700;
+    }
+    .content {
+      padding: 25px;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+    .details {
+      margin: 20px 0;
+      border-collapse: collapse;
+      width: 100%;
+      font-size: 14px;
+    }
+    .details th {
+      background: #f8f9fa;
+      text-align: left;
+      padding: 12px;
+      font-weight: 600;
+      border: 1px solid #e0e0e0;
+    }
+    .details td {
+      padding: 12px;
+      border: 1px solid #e0e0e0;
+    }
+    .footer {
+      background: #f8f9fa;
+      color: #777;
+      font-size: 12px;
+      text-align: center;
+      padding: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h2>🎟️ Your Booking is Confirmed</h2>
+    </div>
+    <div class="content">
+      <p>Hi <strong>{{ user_name }}</strong>,</p>
+      <p>Thank you for booking with <strong>BookMySeat</strong>. Here are your ticket details:</p>
+
+      <table class="details">
+        <tr><th>Movie</th><td>{{ movie_name }}</td></tr>
+        <tr><th>Theater</th><td>{{ theater_name }}</td></tr>
+        <tr><th>Date</th><td>{{ show_date }}</td></tr>
+        <tr><th>Time</th><td>{{ show_time }}</td></tr>
+        <tr><th>Seats</th><td>{{ seat_numbers }}</td></tr>
+        <tr><th>Ticket Price (per seat)</th><td>₹{{ ticket_price }}</td></tr>
+        <tr><th>Total Price</th><td>₹{{ total_price }}</td></tr>
+      </table>
+
+      <p>We look forward to seeing you at the show!</p>
+    </div>
+    <div class="footer">
+      <p>&copy; 2026 BookMySeat. All rights reserved.</p>
+      <p>This is an automated email. Please do not reply.</p>
+    </div>
+  </div>
+</body>
+</html>

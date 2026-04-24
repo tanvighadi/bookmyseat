@@ -1,0 +1,140 @@
+{% extends "users/basic.html" %}
+{% block content %}
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+
+<style>
+  body { font-family: 'Montserrat', sans-serif; }
+  .premium-card {
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .premium-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+  }
+  .filter-bar {
+    background: linear-gradient(90deg,#f8f9fa,#ffffff);
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  }
+  .btn-premium {
+    border-radius: 30px;
+    padding: 8px 20px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  .btn-premium:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  }
+</style>
+
+<div class="container py-5">
+  <h1 class="text-center mb-5 fw-bold" style="color:#1e3a8a;">🎬 Movies</h1>
+
+  <!-- Filter Bar -->
+  <div class="row justify-content-center mb-4">
+    <div class="col-md-10 filter-bar">
+      <form method="GET" action="{% url 'movie_list' %}" class="form-inline justify-content-center">
+        <!-- Genre Filter -->
+        <div class="form-group mx-2">
+          <label for="genre" class="mr-2 fw-bold">Genre</label>
+          <select name="genre" id="genre" class="form-control" onchange="this.form.submit()">
+            <option {% if not selected_genre or selected_genre == 'All' %}selected{% endif %}>All</option>
+            <option {% if selected_genre == 'Fantasy' %}selected{% endif %}>Fantasy</option>
+            <option {% if selected_genre == 'Romance' %}selected{% endif %}>Romance</option>
+            <option {% if selected_genre == 'Sports' %}selected{% endif %}>Sports</option>
+            <option {% if selected_genre == 'Comedy' %}selected{% endif %}>Comedy</option>
+            <option {% if selected_genre == 'Drama' %}selected{% endif %}>Drama</option>
+          </select>
+        </div>
+
+        <!-- Language Filter -->
+        <div class="form-group mx-2">
+          <label for="language" class="mr-2 fw-bold">Language</label>
+          <select name="language" id="language" class="form-control" onchange="this.form.submit()">
+            <option {% if not selected_language or selected_language == 'All' %}selected{% endif %}>All</option>
+            <option {% if selected_language == 'English' %}selected{% endif %}>English</option>
+            <option {% if selected_language == 'Hindi' %}selected{% endif %}>Hindi</option>
+            <option {% if selected_language == 'French' %}selected{% endif %}>French</option>
+            <option {% if selected_language == 'Marathi' %}selected{% endif %}>Marathi</option>
+            <option {% if selected_language == 'Spanish' %}selected{% endif %}>Spanish</option>
+          </select>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="form-group mx-2 flex-grow-1">
+          <div class="input-group">
+            <input
+              class="form-control"
+              name="search"
+              placeholder="Search for Movies, Events, Plays, Sports and Activities"
+              type="text"
+              value="{{ search_query|default_if_none:'' }}"
+              aria-label="Search for movies"
+            />
+            <div class="input-group-append">
+              <button class="btn btn-primary btn-premium" style="background-color:#1e3a8a; border-color:#1e3a8a;" type="submit">
+                <i class="fas fa-search"></i> Search
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Movie Cards -->
+  <div class="row" id="movieList">
+    {% for movie in movies %}
+    <div class="col-md-4 mb-4">
+      <div class="card premium-card h-100">
+        <!-- Poster -->
+        <img src="{{ movie.image.url }}" class="card-img-top" alt="{{ movie.name }}" style="height: 220px; object-fit: contain; border-top-left-radius:16px; border-top-right-radius:16px; background-color:#fff;">
+
+        <div class="card-body">
+          <h5 class="card-title fw-bold">{{ movie.name }}</h5>
+          <p class="card-text">
+            <i class="fas fa-star text-warning"></i> {{ movie.rating }}
+          </p>
+          <p class="card-text">
+            <small class="text-muted">
+              <i class="fas fa-users"></i> Cast: {{ movie.cast }}
+            </small>
+          </p>
+
+          <!-- Trailer Button -->
+          {% if movie.trailer_url %}
+          <p class="card-text mt-2">
+            <a href="{{ movie.trailer_url }}" target="_blank" class="btn btn-sm btn-danger btn-premium">
+              <i class="fas fa-play-circle me-1"></i> Watch Trailer
+            </a>
+          </p>
+          {% endif %}
+        </div>
+
+        <div class="card-footer bg-white border-top-0">
+          <a href="{% url 'theater_list' movie.id %}" class="btn btn-outline-primary btn-block btn-premium" style="border-color:#1e3a8a; color:#1e3a8a;">
+            View Theaters <i class="fas fa-chevron-right ml-2"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    {% empty %}
+    <div class="col-12 text-center">
+      <p class="lead">No movies found. Try a different search term.</p>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+{% endblock %}

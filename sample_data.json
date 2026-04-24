@@ -1,0 +1,1062 @@
+[
+  {
+    "model": "movies.movie",
+    "pk": 1,
+    "fields": {
+      "name": "Harry Potter and the Philosopher's Stone",
+      "genre": "Fantasy",
+      "language": "English",
+      "trailer_url": "https://www.youtube.com/watch?v=VyHV0BRtdxo",
+      "image": "movies/harry_potter.jpg",
+      "rating": 7.6,
+      "cast": "Daniel Radcliffe, Emma Watson, Rupert Grint",
+      "description": "The first film in the Harry Potter series where Harry discovers he is a wizard."
+    }
+  },
+  {
+    "model": "movies.movie",
+    "pk": 2,
+    "fields": {
+      "name": "Sairat",
+      "genre": "Romance",
+      "language": "Marathi",
+      "trailer_url": "https://www.youtube.com/watch?v=3I5V9r2ZLu4",
+      "image": "movies/sairat.jpg",
+      "rating": 8.5,
+      "cast": "Rinku Rajguru, Akash Thosar",
+      "description": "A love story set against caste differences in rural Maharashtra."
+    }
+  },
+  {
+    "model": "movies.movie",
+    "pk": 3,
+    "fields": {
+      "name": "Dangal",
+      "genre": "Sports",
+      "language": "Hindi",
+      "trailer_url": "https://www.youtube.com/watch?v=x_7YlGv9u1g",
+      "image": "movies/dangal.jpg",
+      "rating": 8.4,
+      "cast": "Aamir Khan, Fatima Sana Shaikh, Sanya Malhotra",
+      "description": "Based on the true story of wrestler Mahavir Singh Phogat and his daughters."
+    }
+  },
+  {
+    "model": "movies.movie",
+    "pk": 4,
+    "fields": {
+      "name": "Amélie",
+      "genre": "Comedy",
+      "language": "French",
+      "trailer_url": "https://www.youtube.com/watch?v=HUECWi5pX7o",
+      "image": "movies/amelie.jpg",
+      "rating": 8.3,
+      "cast": "Audrey Tautou, Mathieu Kassovitz",
+      "description": "A whimsical depiction of a shy waitress who decides to change the lives of those around her."
+    }
+  },
+  {
+    "model": "movies.movie",
+    "pk": 5,
+    "fields": {
+      "name": "Pan's Labyrinth",
+      "genre": "Drama",
+      "language": "Spanish",
+      "trailer_url": "https://www.youtube.com/watch?v=EqYiSlkvRuw",
+      "image": "movies/pans_labyrinth.jpg",
+      "rating": 8.2,
+      "cast": "Ivana Baquero, Sergi López, Maribel Verdú",
+      "description": "A dark fantasy set in post-Civil War Spain where a girl discovers a mythical labyrinth."
+    }
+  },
+  {
+    "model": "movies.theater",
+    "pk": 1,
+    "fields": {
+      "name": "PVR Icon Mumbai",
+      "movie": 1,
+      "time": "2026-04-22 20:00:00"
+    }
+  },
+  {
+    "model": "movies.theater",
+    "pk": 2,
+    "fields": {
+      "name": "INOX Borivali",
+      "movie": 1,
+      "time": "2026-04-23 18:00:00"
+    }
+  },
+  {
+    "model": "movies.theater",
+    "pk": 3,
+    "fields": {
+      "name": "Cinepolis Andheri",
+      "movie": 2,
+      "time": "2026-04-22 20:00:00"
+    }
+  },
+  {
+    "model": "movies.theater",
+    "pk": 4,
+    "fields": {
+      "name": "Miraj Cinemas Malad",
+      "movie": 2,
+      "time": "2026-04-23 18:00:00"
+    }
+  },
+  {
+    "model": "movies.theater",
+    "pk": 5,
+    "fields": {
+      "name": "Regal Cinema Colaba",
+      "movie": 3,
+      "time": "2026-04-22 20:00:00"
+    }
+  },
+  {
+    "model": "movies.theater",
+    "pk": 6,
+    "fields": {
+      "name": "PVR Icon Mumbai",
+      "movie": 3,
+      "time": "2026-04-23 18:00:00"
+    }
+  },
+  {
+    "model": "movies.theater",
+    "pk": 7,
+    "fields": {
+      "name": "INOX Borivali",
+      "movie": 4,
+      "time": "2026-04-22 20:00:00"
+    }
+  },
+  {
+    "model": "movies.theater",
+    "pk": 8,
+    "fields": {
+      "name": "Cinepolis Andheri",
+      "movie": 4,
+      "time": "2026-04-23 18:00:00"
+    }
+  },
+  {
+    "model": "movies.theater",
+    "pk": 9,
+    "fields": {
+      "name": "Miraj Cinemas Malad",
+      "movie": 5,
+      "time": "2026-04-22 20:00:00"
+    }
+  },
+  {
+    "model": "movies.theater",
+    "pk": 10,
+    "fields": {
+      "name": "Regal Cinema Colaba",
+      "movie": 5,
+      "time": "2026-04-23 18:00:00"
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 1,
+    "fields": {
+      "seat_number": "A1",
+      "theater": 1,
+      "is_booked": true
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 2,
+    "fields": {
+      "seat_number": "A2",
+      "theater": 1,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 3,
+    "fields": {
+      "seat_number": "A3",
+      "theater": 1,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 4,
+    "fields": {
+      "seat_number": "A4",
+      "theater": 1,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 5,
+    "fields": {
+      "seat_number": "A5",
+      "theater": 1,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 6,
+    "fields": {
+      "seat_number": "A6",
+      "theater": 1,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 7,
+    "fields": {
+      "seat_number": "A7",
+      "theater": 1,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 8,
+    "fields": {
+      "seat_number": "A8",
+      "theater": 1,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 9,
+    "fields": {
+      "seat_number": "A9",
+      "theater": 1,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 10,
+    "fields": {
+      "seat_number": "A10",
+      "theater": 1,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 11,
+    "fields": {
+      "seat_number": "A1",
+      "theater": 2,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 12,
+    "fields": {
+      "seat_number": "A2",
+      "theater": 2,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 13,
+    "fields": {
+      "seat_number": "A3",
+      "theater": 2,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 14,
+    "fields": {
+      "seat_number": "A4",
+      "theater": 2,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 15,
+    "fields": {
+      "seat_number": "A5",
+      "theater": 2,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 16,
+    "fields": {
+      "seat_number": "A6",
+      "theater": 2,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 17,
+    "fields": {
+      "seat_number": "A7",
+      "theater": 2,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 18,
+    "fields": {
+      "seat_number": "A8",
+      "theater": 2,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 19,
+    "fields": {
+      "seat_number": "A9",
+      "theater": 2,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 20,
+    "fields": {
+      "seat_number": "A10",
+      "theater": 2,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 21,
+    "fields": {
+      "seat_number": "A1",
+      "theater": 3,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 22,
+    "fields": {
+      "seat_number": "A2",
+      "theater": 3,
+      "is_booked": true
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 23,
+    "fields": {
+      "seat_number": "A3",
+      "theater": 3,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 24,
+    "fields": {
+      "seat_number": "A4",
+      "theater": 3,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 25,
+    "fields": {
+      "seat_number": "A5",
+      "theater": 3,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 26,
+    "fields": {
+      "seat_number": "A6",
+      "theater": 3,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 27,
+    "fields": {
+      "seat_number": "A7",
+      "theater": 3,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 28,
+    "fields": {
+      "seat_number": "A8",
+      "theater": 3,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 29,
+    "fields": {
+      "seat_number": "A9",
+      "theater": 3,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 30,
+    "fields": {
+      "seat_number": "A10",
+      "theater": 3,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 31,
+    "fields": {
+      "seat_number": "A1",
+      "theater": 4,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 32,
+    "fields": {
+      "seat_number": "A2",
+      "theater": 4,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 33,
+    "fields": {
+      "seat_number": "A3",
+      "theater": 4,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 34,
+    "fields": {
+      "seat_number": "A4",
+      "theater": 4,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 35,
+    "fields": {
+      "seat_number": "A5",
+      "theater": 4,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 36,
+    "fields": {
+      "seat_number": "A6",
+      "theater": 4,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 37,
+    "fields": {
+      "seat_number": "A7",
+      "theater": 4,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 38,
+    "fields": {
+      "seat_number": "A8",
+      "theater": 4,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 39,
+    "fields": {
+      "seat_number": "A9",
+      "theater": 4,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 40,
+    "fields": {
+      "seat_number": "A10",
+      "theater": 4,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 41,
+    "fields": {
+      "seat_number": "A1",
+      "theater": 5,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 42,
+    "fields": {
+      "seat_number": "A2",
+      "theater": 5,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 43,
+    "fields": {
+      "seat_number": "A3",
+      "theater": 5,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 44,
+    "fields": {
+      "seat_number": "A4",
+      "theater": 5,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 45,
+    "fields": {
+      "seat_number": "A5",
+      "theater": 5,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 46,
+    "fields": {
+      "seat_number": "A6",
+      "theater": 5,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 47,
+    "fields": {
+      "seat_number": "A7",
+      "theater": 5,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 48,
+    "fields": {
+      "seat_number": "A8",
+      "theater": 5,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 49,
+    "fields": {
+      "seat_number": "A9",
+      "theater": 5,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 50,
+    "fields": {
+      "seat_number": "A10",
+      "theater": 5,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 51,
+    "fields": {
+      "seat_number": "A1",
+      "theater": 6,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 52,
+    "fields": {
+      "seat_number": "A2",
+      "theater": 6,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 53,
+    "fields": {
+      "seat_number": "A3",
+      "theater": 6,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 54,
+    "fields": {
+      "seat_number": "A4",
+      "theater": 6,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 55,
+    "fields": {
+      "seat_number": "A5",
+      "theater": 6,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 56,
+    "fields": {
+      "seat_number": "A6",
+      "theater": 6,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 57,
+    "fields": {
+      "seat_number": "A7",
+      "theater": 6,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 58,
+    "fields": {
+      "seat_number": "A8",
+      "theater": 6,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 59,
+    "fields": {
+      "seat_number": "A9",
+      "theater": 6,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 60,
+    "fields": {
+      "seat_number": "A10",
+      "theater": 6,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 61,
+    "fields": {
+      "seat_number": "A1",
+      "theater": 7,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 62,
+    "fields": {
+      "seat_number": "A2",
+      "theater": 7,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 63,
+    "fields": {
+      "seat_number": "A3",
+      "theater": 7,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 64,
+    "fields": {
+      "seat_number": "A4",
+      "theater": 7,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 65,
+    "fields": {
+      "seat_number": "A5",
+      "theater": 7,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 66,
+    "fields": {
+      "seat_number": "A6",
+      "theater": 7,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 67,
+    "fields": {
+      "seat_number": "A7",
+      "theater": 7,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 68,
+    "fields": {
+      "seat_number": "A8",
+      "theater": 7,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 69,
+    "fields": {
+      "seat_number": "A9",
+      "theater": 7,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 70,
+    "fields": {
+      "seat_number": "A10",
+      "theater": 7,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 71,
+    "fields": {
+      "seat_number": "A1",
+      "theater": 8,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 72,
+    "fields": {
+      "seat_number": "A2",
+      "theater": 8,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 73,
+    "fields": {
+      "seat_number": "A3",
+      "theater": 8,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 74,
+    "fields": {
+      "seat_number": "A4",
+      "theater": 8,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 75,
+    "fields": {
+      "seat_number": "A5",
+      "theater": 8,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 76,
+    "fields": {
+      "seat_number": "A6",
+      "theater": 8,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 77,
+    "fields": {
+      "seat_number": "A7",
+      "theater": 8,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 78,
+    "fields": {
+      "seat_number": "A8",
+      "theater": 8,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 79,
+    "fields": {
+      "seat_number": "A9",
+      "theater": 8,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 80,
+    "fields": {
+      "seat_number": "A10",
+      "theater": 8,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 81,
+    "fields": {
+      "seat_number": "A1",
+      "theater": 9,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 82,
+    "fields": {
+      "seat_number": "A2",
+      "theater": 9,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 83,
+    "fields": {
+      "seat_number": "A3",
+      "theater": 9,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 84,
+    "fields": {
+      "seat_number": "A4",
+      "theater": 9,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 85,
+    "fields": {
+      "seat_number": "A5",
+      "theater": 9,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 86,
+    "fields": {
+      "seat_number": "A6",
+      "theater": 9,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 87,
+    "fields": {
+      "seat_number": "A7",
+      "theater": 9,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 88,
+    "fields": {
+      "seat_number": "A8",
+      "theater": 9,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 89,
+    "fields": {
+      "seat_number": "A9",
+      "theater": 9,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 90,
+    "fields": {
+      "seat_number": "A10",
+      "theater": 9,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 91,
+    "fields": {
+      "seat_number": "A1",
+      "theater": 10,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 92,
+    "fields": {
+      "seat_number": "A2",
+      "theater": 10,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 93,
+    "fields": {
+      "seat_number": "A3",
+      "theater": 10,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 94,
+    "fields": {
+      "seat_number": "A4",
+      "theater": 10,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 95,
+    "fields": {
+      "seat_number": "A5",
+      "theater": 10,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 96,
+    "fields": {
+      "seat_number": "A6",
+      "theater": 10,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 97,
+    "fields": {
+      "seat_number": "A7",
+      "theater": 10,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 98,
+    "fields": {
+      "seat_number": "A8",
+      "theater": 10,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 99,
+    "fields": {
+      "seat_number": "A9",
+      "theater": 10,
+      "is_booked": false
+    }
+  },
+  {
+    "model": "movies.seat",
+    "pk": 100,
+    "fields": {
+      "seat_number": "A10",
+      "theater": 10,
+      "is_booked": false
+    }
+  }
+]
